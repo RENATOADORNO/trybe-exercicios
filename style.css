@@ -1,0 +1,19 @@
+
+
+/* Par */
+ol li:nth-child(even) {
+  color: green;
+}
+
+/* Ímpar */
+ol li:nth-child(odd){
+  text-transform: uppercase;
+  text-align: center;
+}
+
+h1 {
+  color: red;
+  font-size: 40px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
