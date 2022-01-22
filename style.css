@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: gray;
+}
+
+h4 {
+  text-align: center;
+  padding: 20px;
+}
+
+.form-header {
+  text-align: center;
+  background-color: rgb(246, 247, 248);
+  border: 1px solid rgb(214, 217,220);
+  border-radius: 10px;
+  width: 80%;
+  margin: 40px auto;
+  padding: 50px;
+  box-shadow: 8px 2px 30px rgb(59, 59, 59);
+}
+
+.box-style {
+  background-color: rgb(246, 247, 248);
+  border: 1px solid rgb(214, 217,220);
+  border-radius: 10px;
+  width: 80%;
+  margin: 40px auto;
+  padding: 1px;
+  box-shadow: 8px 2px 30px rgb(59, 59, 59);
+}
+
+.line-content {
+  width: 100%;
+}
+
+.box {
+  width: 80%;
+  margin: 40px auto;
+}
+
+.fieldset {
+  padding: 10px;
+  border: 1px solid rgb(214, 217,220);
+}
+
+.abstract-style {
+  width: 100%;
+  height: 60px;
+  resize: none;
+}
