@@ -22,3 +22,15 @@ function create({ firstName, lastName, email, password }) {
   // Obtemos o resultado da inserção e o utilizamos para obter o ID recém inserido
   .then(([result]) => ({ id: result.insertId, firstName, lastName, email }));
 }
+
+function findAll() {
+  // Mais uma vez, chamamos connection.execute para executar nossa query.
+  return connection.execute('SELECT * from users;')
+  // Passamos cada resultado pela função de formatação
+  .then(([results]) => results.map(formatUser));
+}
+
+module.exports = {
+  create,
+  findAll,
+}

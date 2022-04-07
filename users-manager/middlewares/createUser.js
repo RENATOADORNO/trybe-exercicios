@@ -1,6 +1,8 @@
 const Joi = require('joi');
 const rescue = require('express-rescue');
-const UserModel = require('../models/userModel');
+const {
+  create,
+} = require('../models/userModel');
 
 // Primeiro definimos qual o schema da nossa requisição
 const createUserSchema = Joi.object({
@@ -8,10 +10,6 @@ const createUserSchema = Joi.object({
   lastName: Joi.string().required(),
   email: Joi.string().email().required(),
   password: Joi.string().min(6).required(),
-}).messages({
-  'any.required': 'O campo {{: id="label" }} é obrigatório',
-  'string.min': 'O campo {{: id="label" }} deve ter, pelo menos, {{: id="limit" }} caracteres',
-  'string.email': 'Informe um email válido no campo {{: id="label" }}',
 });
 
 const userValidation = (req, _res, next) => {
@@ -40,7 +38,7 @@ const userCreate = rescue(async (req, res, next) => {
   }
 
   // Caso os dados sejam válidos, pedimos pro model criar o usuário
-  const newUser = await UserModel.create({ firstName, lastName, email, password });
+  const newUser = await create({ firstName, lastName, email, password });
 
   // Com o usuário criado, devolvemos o status 201 Created, a mensagem informando sucesso na operação
   res.status(201).json(newUser);
