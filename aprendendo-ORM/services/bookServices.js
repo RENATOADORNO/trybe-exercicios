@@ -8,6 +8,13 @@ const getAll = async () => {
   return results;
 };
 
+const getById = async (id) => {
+  const results = await BooksModel.findByPk(id);
+
+  return results;
+};
+
 module.exports = {
   getAll,
+  getById,
 }
