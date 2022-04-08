@@ -8,9 +8,9 @@ module.exports = (sequelize, DataTypes) => {
     author: DataTypes.STRING,
     pageQuantity: DataTypes.INTEGER,
     createdAt: DataTypes.DATE,
+    updatedAt: DataTypes.DATE
   }, {
-    tableName: 'books',
-    timestamps: false
+    tableName: 'books'
   });
 
   return books;
